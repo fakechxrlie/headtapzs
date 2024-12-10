@@ -14,6 +14,8 @@
     <div class="logo">HEADTAPZ</div>
     <ul>
       <li><a href="#features"><i class="fas fa-bolt"></i> Features</a></li>
+      <li><a href="#media"><i class="fas fa-play-circle"></i> Media</a></li>
+      <li><a href="#status"><i class="fas fa-exclamation-circle"></i> Status</a></li>
       <li><a href="#pricing"><i class="fas fa-tags"></i> Pricing</a></li>
       <li>
         <a href="https://discord.gg/yourserver" target="_blank">
@@ -80,23 +82,21 @@
 </section>
 
   <section id="status" class="status">
-  <h2><i class="fas fa-exclamation-circle"></i> Status & Ban Rate</h2>
-  
-  <!-- Detection Status -->
-  <div class="status-container">
-    <p><strong>Detection Status:</strong></p>
-    <div class="status-bar">
-      <div class="status-fill" id="status-fill"></div>
+    <h2><i class="fas fa-exclamation-circle"></i> Status & Ban Rate</h2>
+    <div class="status-container">
+      <div class="status-bar">
+        <p>Status: <span id="status-text">Undetected</span></p>
+        <div class="bar-container">
+          <div class="bar" id="status-bar" style="width: 100%;"></div>
+        </div>
+        <p>Since: November 11th</p>
+      </div>
+      <div class="ban-rate">
+        <p>Last Updated: <span id="ban-date"></span></p>
+        <p>Ban Rate: <span id="ban-rate">0.01%</span></p>
+      </div>
     </div>
-    <p id="status-dates">From November 11th to <span id="current-date"></span></p>
-  </div>
-  
-  <!-- Ban Rate -->
-  <div class="ban-rate">
-    <p><strong>Ban Rate:</strong> <span id="ban-rate">0.00%</span></p>
-    <p>Last Updated: <span id="last-updated">loading...</span></p>
-  </div>
-</section>
+  </section>
 
   
 <section id="pricing" class="pricing">
@@ -123,7 +123,17 @@
 
 
   <footer>
-    <p>© 2024 Valorant Triggerbot. All rights reserved.</p>
+    <p>© 2024 HEADTAPZ. All rights reserved.</p>
   </footer>
+    <script>
+    // JavaScript for updating the ban date
+    function updateBanDate() {
+      const now = new Date();
+      const formattedDate = now.toLocaleString();
+      document.getElementById("ban-date").textContent = formattedDate;
+    }
+    setInterval(updateBanDate, 600000); // Update every 10 minutes
+    updateBanDate();
+  </script>
 </body>
 </html>
