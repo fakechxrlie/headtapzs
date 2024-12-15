@@ -1,4 +1,4 @@
-/* Cyber Theme Stylesheet */
+/* Instructions Page Stylesheet */
 
 :root {
   --bg-color: #0d1117;
@@ -8,9 +8,6 @@
   --hover-color: #00ffcc;
   --card-bg: #161b22;
   --nav-bg: rgba(13, 17, 23, 0.9);
-  --status-online: #00ff00;
-  --status-offline: #ff0000;
-  --status-maintenance: #ffa500;
   --font-family: 'Zekton', sans-serif;
 }
 
@@ -64,129 +61,71 @@ section {
   text-align: center;
 }
 
-.intro {
-  background: linear-gradient(to bottom, #0d1117, #161b22);
-  color: var(--text-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.intro h1 {
-  font-size: 3rem;
-  color: var(--primary-color);
-  text-shadow: 0 0 10px var(--primary-color);
-}
-
-.intro p {
-  font-size: 1.2rem;
-  color: #cccccc;
-}
-
-.features, .pricing, .media {
+.instructions {
   background: var(--card-bg);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   margin: 2rem auto;
   padding: 2rem;
-  max-width: 1200px;
-}
-.media {
-  padding: 2rem 5%; /* Added horizontal padding */
-  text-align: center;
-  color: var(--text-color);
+  max-width: 800px;
+  text-align: left;
 }
 
-.media h2 {
+.instructions h2 {
   font-size: 2rem;
-  color: var(--accent-color);
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
-.media p {
-  margin-bottom: 2rem;
+.instructions p {
   color: #cccccc;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
-.video-container {
+.download-box {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
   display: flex;
-  justify-content: space-between; /* Videos in a straight line */
-  flex-wrap: nowrap;
-  gap: 1.5rem;
-  overflow-x: auto;
-}
-
-.video {
-  width: 320px;
-  aspect-ratio: 16/9;
-  background: #000;
-  border-radius: 10px;
-  overflow: hidden;
+  align-items: center;
+  gap: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video:hover {
+.download-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(30, 144, 255, 0.5);
+  box-shadow: 0 6px 15px rgba(178, 34, 34, 0.5);
 }
 
-.video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-
-.features ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features ul li {
-  margin: 1rem 0;
-  font-size: 1.2rem;
-}
-
-.features ul li i {
-  color: var(--primary-color);
-  margin-right: 0.5rem;
-}
-
-.pricing .tier {
-  display: inline-block;
-  margin: 1rem;
-  padding: 1.5rem;
-  border: 2px solid var(--primary-color);
+.download-box img {
+  width: 80px;
+  height: 80px;
   border-radius: 10px;
-  background: var(--bg-color);
-  transition: transform 0.3s, box-shadow 0.3s;
+  object-fit: cover;
 }
 
-.pricing .tier:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--primary-color);
+.download-box .info {
+  flex-grow: 1;
 }
 
-.pricing .tier h3 {
+.download-box .info h3 {
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
 }
 
-.pricing .tier p {
+.download-box .info p {
+  margin: 0;
+  font-size: 1rem;
   color: #cccccc;
 }
 
-.pricing .price {
-  font-size: 2rem;
-  color: var(--primary-color);
-}
-
-.pricing .buy-btn {
-  display: inline-block;
-  margin-top: 1rem;
+.download-box .download-btn {
   padding: 0.5rem 1rem;
   background: var(--primary-color);
   color: var(--bg-color);
@@ -197,51 +136,8 @@ section {
   transition: background 0.3s;
 }
 
-.pricing .buy-btn:hover {
+.download-box .download-btn:hover {
   background: var(--hover-color);
-}
-
-.status {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 800px;
-  text-align: center;
-}
-
-.status .status-indicator {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.status .status-indicator div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  color: var(--text-color);
-}
-
-.status .status-indicator div span {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.status-online span {
-  background: var(--status-online);
-}
-
-.status-offline span {
-  background: var(--status-offline);
-}
-
-.status-maintenance span {
-  background: var(--status-maintenance);
 }
 
 footer {
